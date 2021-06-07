@@ -1,0 +1,29 @@
+ALGORITHM Sentence
+VAR
+ arr1: array_name : ARRAY_OF type[];;
+ arr2: array_name : ARRAY_OF type[];
+ arr3: array_name : ARRAY_OF type[];
+ sentence : array_name : ARRAY_OF type[];
+ k,l,i,j: INTEGER;
+
+BEGIN
+ Read(sentence)
+ FOR i FROM 0 TO sentence.length STEP i++  DO
+  IF (sentence[i]=" ") THEN
+     arr1[j]:=values[i];j++ 
+  ELSE
+      arr2[k]:=values[i];k++
+  END_IF
+ END_FOR
+
+ FOR i FROM 0 TO arr2.length STEP i++  DO
+     IF (arr2[i]="a"||arr2[i]="e"||arr2[i]="i"||arr2[i]="o"||arr2[i]="u"||arr2[i]="y") THEN
+    arr3[l]=arr2[i];l++
+     END_IF
+ END_FOR
+ write("The length of the sentence is:"+""+ arr2.length)
+ write(arr1.length+1+" "+"words")
+ write(arr3)
+ write("The number of vowels in the sentence"+""+arr3.length)
+
+END
