@@ -1,22 +1,20 @@
 ALGORITHM sentence
 VAR
     word : CHAR;
-    vowel:INTEGER:=0;
-    l:INTEGER:=0;
-    W:INTEGER:=0;
+    vowel:INTEGER;vowel:=0;
+    l:INTEGER;l:=0;
+    W:INTEGER;W:=0;
     i :INTEGER;
 BEGIN
+ Read(word);
 FOR i FROM 0 TO word.length STEP 1  DO
-  IF (word=".") THEN
-     l:=i;
+   IF (word="a"||word="e"||word="i"||word="o"||word="u"||word="y") THEN
+    vowel:= vowel +1;
   ELSE IF(word=" ") THEN
       W:=W+1;
-  END_IF
- END_FOR
-    FOR i FROM 0 TO word.length STEP 1  DO
-     IF (word="a"||word="e"||word="i"||word="o"||word="u"||word="y") THEN
-    vowel:= vowel +1;
-     END_IF
+  ELSE IF (word=".") THEN
+     l:=i;
+  END_IF    
  END_FOR
  write("The length of the sentence is:"+""+l)
  write(W+" "+"words")
